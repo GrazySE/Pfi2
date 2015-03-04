@@ -17,6 +17,7 @@ public class UpdateMe extends Thread{
 				e.printStackTrace();
 			}
 			System.out.println("Uppdaterar");
+			//Ser ut som denna är felstavad
 			gui.UpdateLables();
 		}
 
