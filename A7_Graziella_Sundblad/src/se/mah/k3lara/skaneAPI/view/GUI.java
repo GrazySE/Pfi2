@@ -223,11 +223,60 @@ public class GUI extends JFrame {
 		  labelTime3.setText(FixThatClock(lines.getLines().get(2).getDepTime().get(Calendar.HOUR_OF_DAY)) + ":" + FixThatClock(lines.getLines().get(2).getDepTime().get(Calendar.MINUTE)));
 		  labelTime4.setText(FixThatClock(lines.getLines().get(3).getDepTime().get(Calendar.HOUR_OF_DAY)) + ":" + FixThatClock(lines.getLines().get(3).getDepTime().get(Calendar.MINUTE)));
 		
-	}
+
 	
-	public String FixThatClock(int time){
+/** now with deviation
+
+
+		/**if time deviation is 0, nothing additional will be shown. Otheewise, it will show "+" and the time deviation (i.e delay time)*/
+
+
+		     if (lines.getLines().get(0).getDepTimeDeviation() != "") {
+				JLabel label = new JLabel("+");
+				label.setForeground(new Color(255, 255, 255));
+				label.setBounds(392, 82, 20, 14);
+				contentPane.add(label);
+				labelLate1.setText(lines.getLines().get(0).getDepTimeDeviation() + " min");
+			}
+		
+		     if (lines.getLines().get(1).getDepTimeDeviation() != "") {
+				JLabel label_1 = new JLabel("+");
+				label_1.setForeground(Color.WHITE);
+				label_1.setBounds(392, 107, 20, 14);
+				contentPane.add(label_1);
+				labelLate2.setText(lines.getLines().get(1).getDepTimeDeviation() + " min");
+			}
+		     if (lines.getLines().get(2).getDepTimeDeviation() != "") {
+				JLabel label_2 = new JLabel("+");
+				label_2.setForeground(Color.WHITE);
+				label_2.setBounds(392, 132, 20, 14);
+				contentPane.add(label_2);
+				labelLate3.setText(lines.getLines().get(2).getDepTimeDeviation() + " min");
+			}
+		    if (lines.getLines().get(3).getDepTimeDeviation() != "") {
+			JLabel label_3 = new JLabel("+");
+			label_3.setForeground(Color.WHITE);
+			label_3.setBounds(392, 157, 20, 14);
+			contentPane.add(label_3);
+			labelLate4.setText(lines.getLines().get(3).getDepTimeDeviation());
+
+				
+			}
+			
+
+			
+
+	}
+
+
+
+
+
+}
+
+public String FixThatClock(int time){
 		  // Some variables that will create a '0' if a number is single digit, to
-		  // make it nicer.
+		  // make it look nicer.
 		  String zero = "";
 
 		  if (time < 10) {
