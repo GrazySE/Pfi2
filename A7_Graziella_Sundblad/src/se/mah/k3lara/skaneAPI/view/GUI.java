@@ -272,7 +272,7 @@ public class GUI extends JFrame {
 
 
 
-}
+
 
 public String FixThatClock(int time){
 		  // Some variables that will create a '0' if a number is single digit, to
